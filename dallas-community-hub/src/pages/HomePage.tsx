@@ -77,10 +77,10 @@ export default function HomePage() {
               onComplete={() => setTypingComplete(true)}
             />
           </h1>
-          <p className={`text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto transition-all duration-700 ${typingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto">
             Your gateway to essential resources, support services, and community programs across the Dallas-Fort Worth metroplex
           </p>
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-300 ${typingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/resources">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-10 py-6 rounded-full">
                 Explore Resources

@@ -92,11 +92,6 @@ export default function TypewriterText({
           |
         </span>
       )}
-      {showCursor && isComplete && (
-        <span className={`inline-block w-0.5 h-[1em] ml-1 align-middle animate-pulse opacity-70 ${cursorClassName}`}>
-          |
-        </span>
-      )}
     </span>
   );
 }
