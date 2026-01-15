@@ -160,3 +160,29 @@
   background: rgba(255, 255, 255, 0.9);
 }
 
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes typewriter-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(217, 119, 6, 0.6), 0 0 30px rgba(217, 119, 6, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: typewriter-glow 2s ease-in-out infinite;
+}
+

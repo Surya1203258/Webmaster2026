@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Heart, 
@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import TypewriterText from '../components/TypewriterText';
 import { 
   resources, 
   ResourceCategory, 
@@ -38,6 +39,7 @@ const categoryIcons: Record<ResourceCategory, React.ReactNode> = {
 export default function HomePage() {
   const spotlightRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const [typingComplete, setTypingComplete] = useState(false);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -45,6 +47,11 @@ export default function HomePage() {
 
   const featuredResources = resources.filter(r => r.featured);
   const categories = Object.keys(categoryLabels) as ResourceCategory[];
+
+  const titleSegments = [
+    { text: 'Connecting Dallas', className: 'text-white' },
+    { text: 'Communities', className: 'text-amber-400 italic', isNewLine: true }
+  ];
 
   return (
     <div className="min-h-screen bg-stone-50">
@@ -59,14 +66,21 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/80" />
         
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 animate-fade-in">
-            Connecting Dallas
-            <span className="block text-amber-400 italic">Communities</span>
+          <h1 className={`font-serif text-5xl md:text-7xl lg:text-8xl mb-6 min-h-[1.2em] md:min-h-[2.4em] ${typingComplete ? 'animate-glow' : ''}`}>
+            <TypewriterText 
+              segments={titleSegments}
+              typingSpeed={70}
+              delayBetweenSegments={300}
+              startDelay={800}
+              showCursor={true}
+              cursorClassName="text-amber-400"
+              onComplete={() => setTypingComplete(true)}
+            />
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className={`text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto transition-all duration-700 ${typingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Your gateway to essential resources, support services, and community programs across the Dallas-Fort Worth metroplex
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-300 ${typingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Link to="/resources">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-10 py-6 rounded-full">
                 Explore Resources
