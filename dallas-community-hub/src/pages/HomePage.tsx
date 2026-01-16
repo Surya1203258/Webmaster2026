@@ -57,12 +57,16 @@ export default function HomePage() {
     <div className="min-h-screen bg-stone-50">
       {/* Hero Section */}
       <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=1920&auto=format&fit=crop')`
-          }}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=1920&auto=format&fit=crop"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="https://cdn.coverr.co/videos/coverr-new-york-city-skyline-2410/1080p.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/80" />
         
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
