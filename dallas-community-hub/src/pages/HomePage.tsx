@@ -9,7 +9,6 @@ import {
   UserCheck, 
   Briefcase, 
   Brain, 
-  Calendar,
   UtensilsCrossed,
   Star,
   ArrowRight
@@ -32,8 +31,7 @@ const categoryIcons: Record<ResourceCategory, React.ReactNode> = {
   'youth-programs': <Users className="w-6 h-6" />,
   'senior-services': <UserCheck className="w-6 h-6" />,
   'employment': <Briefcase className="w-6 h-6" />,
-  'mental-health': <Brain className="w-6 h-6" />,
-  'community-events': <Calendar className="w-6 h-6" />
+  'mental-health': <Brain className="w-6 h-6" />
 };
 
 export default function HomePage() {

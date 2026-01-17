@@ -137,7 +137,7 @@ export default function ResourcesPage() {
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Video Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           muted
@@ -162,7 +162,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-12 bg-white border-b sticky top-20 z-40">
+      <section className="py-12 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1 relative">

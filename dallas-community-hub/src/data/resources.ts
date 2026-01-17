@@ -23,8 +23,7 @@ export type ResourceCategory =
   | 'youth-programs'
   | 'senior-services'
   | 'employment'
-  | 'mental-health'
-  | 'community-events';
+  | 'mental-health';
 
 export const categoryLabels: Record<ResourceCategory, string> = {
   'non-profit': 'Non-Profit Organizations',
@@ -35,8 +34,7 @@ export const categoryLabels: Record<ResourceCategory, string> = {
   'youth-programs': 'Youth Programs',
   'senior-services': 'Senior Services',
   'employment': 'Employment Services',
-  'mental-health': 'Mental Health',
-  'community-events': 'Community Events'
+  'mental-health': 'Mental Health'
 };
 
 export const categoryIcons: Record<ResourceCategory, string> = {
@@ -48,8 +46,7 @@ export const categoryIcons: Record<ResourceCategory, string> = {
   'youth-programs': 'Users',
   'senior-services': 'UserCheck',
   'employment': 'Briefcase',
-  'mental-health': 'Brain',
-  'community-events': 'Calendar'
+  'mental-health': 'Brain'
 };
 
 export const resources: Resource[] = [
@@ -237,20 +234,6 @@ export const resources: Resource[] = [
     image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&auto=format&fit=crop',
     services: ['Primary Care', 'Dental Services', 'Behavioral Health', 'Preventive Care'],
     hours: 'Mon-Fri: 8:00 AM - 6:00 PM | Sat: 9:00 AM - 1:00 PM'
-  },
-  {
-    id: '14',
-    name: 'Dallas Arts District Foundation',
-    category: 'community-events',
-    description: 'Cultural programming and community events in the largest urban arts district in the nation.',
-    longDescription: 'The Dallas Arts District Foundation supports cultural programming and community events in the largest contiguous urban arts district in the nation. They host free concerts, art exhibitions, and family-friendly events throughout the year.',
-    address: '2100 Ross Ave, Dallas, TX 75201',
-    phone: '(214) 953-1977',
-    email: 'info@dallasartsdistrict.org',
-    website: 'https://dallasartsdistrict.org',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop',
-    services: ['Free Concerts', 'Art Exhibitions', 'Family Events', 'Cultural Programs'],
-    hours: 'Events vary - check website for schedule'
   },
   {
     id: '15',

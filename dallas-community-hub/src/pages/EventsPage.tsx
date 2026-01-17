@@ -68,7 +68,7 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Video Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           muted
