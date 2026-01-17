@@ -7,7 +7,6 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled || !isHomePage ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-20">
@@ -36,10 +35,10 @@ export default function Navbar() {
               <Heart className="w-6 h-6 text-white" />
             </div>
             <div>
-              <span className={`font-serif text-xl font-semibold ${isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'}`}>
+              <span className={`font-serif text-xl font-semibold ${isScrolled ? 'text-stone-800' : 'text-white'}`}>
                 Dallas
               </span>
-              <span className={`font-serif text-xl ${isScrolled || !isHomePage ? 'text-amber-600' : 'text-amber-400'}`}>
+              <span className={`font-serif text-xl ${isScrolled ? 'text-amber-600' : 'text-amber-400'}`}>
                 {' '}Community Hub
               </span>
             </div>
@@ -53,7 +52,7 @@ export default function Navbar() {
                 className={`font-medium transition-colors ${
                   location.pathname === link.path
                     ? 'text-amber-600'
-                    : isScrolled || !isHomePage
+                    : isScrolled
                     ? 'text-stone-600 hover:text-amber-600'
                     : 'text-white/90 hover:text-white'
                 }`}
@@ -73,9 +72,9 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'}`} />
+              <X className={`w-6 h-6 ${isScrolled ? 'text-stone-800' : 'text-white'}`} />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'}`} />
+              <Menu className={`w-6 h-6 ${isScrolled ? 'text-stone-800' : 'text-white'}`} />
             )}
           </button>
         </div>
