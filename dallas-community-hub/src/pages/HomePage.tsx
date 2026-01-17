@@ -62,10 +62,10 @@ export default function HomePage() {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=1920&auto=format&fit=crop"
+          poster="https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1920&auto=format&fit=crop&q=80"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://cdn.coverr.co/videos/coverr-new-york-city-skyline-2410/1080p.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/18505644/18505644-hd_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/80" />
         
