@@ -60,7 +60,6 @@ export default function HomePage() {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1920&auto=format&fit=crop&q=80"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="https://videos.pexels.com/video-files/18505644/18505644-hd_1920_1080_24fps.mp4" type="video/mp4" />
