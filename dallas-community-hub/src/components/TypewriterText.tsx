@@ -80,15 +80,18 @@ export default function TypewriterText({
   }, [isTyping, currentSegmentIndex, currentCharIndex, segments, typingSpeed, delayBetweenSegments, onComplete, isComplete]);
 
   return (
-    <span className="inline">
+    <span className="inline relative">
       {displayedSegments.map((segment, index) => (
         <span key={index}>
           {segment.isNewLine && <br />}
           <span className={segment.className}>{segment.text}</span>
         </span>
       ))}
-      {showCursor && !isComplete && (
-        <span className={`inline-block w-0.5 h-[1em] ml-1 align-middle animate-blink ${cursorClassName}`}>
+      {showCursor && (
+        <span 
+          className={`inline-block w-0.5 h-[1em] ml-1 align-middle animate-blink ${cursorClassName} ${isComplete ? 'opacity-0' : 'opacity-100'}`}
+          aria-hidden="true"
+        >
           |
         </span>
       )}
