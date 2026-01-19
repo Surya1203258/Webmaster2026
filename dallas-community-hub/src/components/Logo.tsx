@@ -6,10 +6,11 @@ interface LogoProps {
 export default function Logo({ className = "w-10 h-10", variant = 'dark' }: LogoProps) {
   const primaryColor = variant === 'light' ? '#ffffff' : '#d97706';
   const secondaryColor = variant === 'light' ? '#fbbf24' : '#b45309';
+  const hubColor = variant === 'light' ? '#fbbf24' : '#b45309';
   
   return (
     <svg
-      viewBox="0 0 48 48"
+      viewBox="0 0 60 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -21,70 +22,36 @@ export default function Logo({ className = "w-10 h-10", variant = 'dark' }: Logo
         </linearGradient>
       </defs>
       
-      <circle cx="24" cy="8" r="4" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="40" cy="16" r="3.5" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="44" cy="28" r="3" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="40" cy="40" r="3.5" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="24" cy="44" r="4" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="8" cy="40" r="3.5" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="4" cy="28" r="3" fill={`url(#logoGradient-${variant})`} />
-      <circle cx="8" cy="16" r="3.5" fill={`url(#logoGradient-${variant})`} />
-      
-      <circle cx="24" cy="24" r="8" fill={`url(#logoGradient-${variant})`} />
-      
       <path
-        d="M24 12 L24 16"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
+        d="M4 8 L4 32 Q4 38 10 38 L18 38 Q24 38 24 32 L24 8 Q24 2 18 2 L10 2 Q4 2 4 8 Z"
+        fill={`url(#logoGradient-${variant})`}
       />
       <path
-        d="M36.5 17.5 L31 21"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M40 28 L32 28"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M36.5 38.5 L31 35"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M24 40 L24 32"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M11.5 38.5 L17 35"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M8 28 L16 28"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M11.5 17.5 L17 21"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      
-      <path
-        d="M24 20 L21 24 L24 28 L27 24 Z"
+        d="M8 12 L8 28 Q8 32 12 32 L16 32 Q20 32 20 28 L20 12 Q20 8 16 8 L12 8 Q8 8 8 12 Z"
         fill={variant === 'light' ? '#1c1917' : '#ffffff'}
       />
+      
+      <path
+        d="M54 6 Q54 2 50 2 L36 2 Q30 2 30 8 L30 32 Q30 38 36 38 L50 38 Q54 38 54 34"
+        stroke={`url(#logoGradient-${variant})`}
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      
+      <text
+        x="30"
+        y="50"
+        textAnchor="middle"
+        fill={hubColor}
+        fontSize="10"
+        fontFamily="system-ui, -apple-system, sans-serif"
+        fontWeight="600"
+        letterSpacing="2"
+      >
+        hub
+      </text>
     </svg>
   );
 }
