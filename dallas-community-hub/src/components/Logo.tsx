@@ -6,11 +6,11 @@ interface LogoProps {
 export default function Logo({ className = "w-10 h-10", variant = 'dark' }: LogoProps) {
   const primaryColor = variant === 'light' ? '#ffffff' : '#d97706';
   const secondaryColor = variant === 'light' ? '#fbbf24' : '#b45309';
-  const hubColor = variant === 'light' ? '#fbbf24' : '#b45309';
+  const accentColor = variant === 'light' ? '#fcd34d' : '#f59e0b';
   
   return (
     <svg
-      viewBox="0 0 60 52"
+      viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -20,38 +20,34 @@ export default function Logo({ className = "w-10 h-10", variant = 'dark' }: Logo
           <stop offset="0%" stopColor={primaryColor} />
           <stop offset="100%" stopColor={secondaryColor} />
         </linearGradient>
+        <linearGradient id={`logoGradientReverse-${variant}`} x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stopColor={primaryColor} />
+          <stop offset="100%" stopColor={secondaryColor} />
+        </linearGradient>
       </defs>
       
-      <path
-        d="M4 8 L4 32 Q4 38 10 38 L18 38 Q24 38 24 32 L24 8 Q24 2 18 2 L10 2 Q4 2 4 8 Z"
-        fill={`url(#logoGradient-${variant})`}
-      />
-      <path
-        d="M8 12 L8 28 Q8 32 12 32 L16 32 Q20 32 20 28 L20 12 Q20 8 16 8 L12 8 Q8 8 8 12 Z"
-        fill={variant === 'light' ? '#1c1917' : '#ffffff'}
-      />
+      <circle cx="24" cy="6" r="4.5" fill={`url(#logoGradient-${variant})`} />
+      <circle cx="38" cy="12" r="4" fill={`url(#logoGradient-${variant})`} />
+      <circle cx="42" cy="24" r="3.5" fill={`url(#logoGradientReverse-${variant})`} />
+      <circle cx="38" cy="36" r="4" fill={`url(#logoGradient-${variant})`} />
+      <circle cx="24" cy="42" r="4.5" fill={`url(#logoGradientReverse-${variant})`} />
+      <circle cx="10" cy="36" r="4" fill={`url(#logoGradient-${variant})`} />
+      <circle cx="6" cy="24" r="3.5" fill={`url(#logoGradientReverse-${variant})`} />
+      <circle cx="10" cy="12" r="4" fill={`url(#logoGradient-${variant})`} />
       
-      <path
-        d="M54 6 Q54 2 50 2 L36 2 Q30 2 30 8 L30 32 Q30 38 36 38 L50 38 Q54 38 54 34"
-        stroke={`url(#logoGradient-${variant})`}
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
+      <path d="M24 10.5 L24 15" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M34.5 14.5 L30 18" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M38.5 24 L33 24" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M34.5 33.5 L30 30" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M24 37.5 L24 33" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M13.5 33.5 L18 30" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M9.5 24 L15 24" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M13.5 14.5 L18 18" stroke={accentColor} strokeWidth="2.5" strokeLinecap="round" />
       
-      <text
-        x="30"
-        y="50"
-        textAnchor="middle"
-        fill={hubColor}
-        fontSize="10"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontWeight="600"
-        letterSpacing="2"
-      >
-        hub
-      </text>
+      <circle cx="24" cy="24" r="9" fill={`url(#logoGradient-${variant})`} />
+      
+      <circle cx="24" cy="24" r="4" fill={accentColor} />
+      <circle cx="24" cy="24" r="2" fill={variant === 'light' ? '#1c1917' : '#ffffff'} />
     </svg>
   );
 }
