@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Heart, MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -7,10 +8,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-700 rounded-lg flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
-              </div>
+            <Link to="/" className="flex items-center space-x-3 mb-6">
+              <Logo className="w-11 h-11" variant="dark" />
               <div>
                 <span className="font-serif text-xl font-semibold">Dallas</span>
                 <span className="font-serif text-xl text-amber-400"> Community Hub</span>
