@@ -89,7 +89,7 @@ export default function TypewriterText({
       ))}
       {showCursor && (
         <span 
-          className={`inline-block w-0.5 h-[1em] ml-1 align-middle animate-blink ${cursorClassName} ${isComplete ? 'opacity-0' : 'opacity-100'}`}
+          className={`inline-block w-0.5 h-[1em] ml-1 align-middle ${cursorClassName} ${isComplete ? 'opacity-0' : 'animate-blink'}`}
           aria-hidden="true"
         >
           |
